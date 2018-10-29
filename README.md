@@ -1,3 +1,3 @@
 # library-build
-Just for practicing my webpack :)
+Just practicing my webpack :)
 React based
