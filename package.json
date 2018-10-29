@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/lzxxxxx/library-build/issues"
   },
-  "homepage": "https://github.com/lzxxxxx/library-build#readme"
+  "homepage": "https://github.com/lzxxxxx/library-build#readme",
+  "dependencies": {
+    "react": "^16.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0"
+  }
 }
