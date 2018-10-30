@@ -1,9 +1,13 @@
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack');
 
 module.exports = {
-    entry: './app.jsx',
+    entry: {
+        app: './app.jsx',
+        // vendor: ['react','react-dom']
+    },
     output: {
-        filename: 'main.js',
         path: path.resolve(__dirname, '../dist')
     },
     module: {
@@ -27,7 +31,24 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new BundleAnalyzerPlugin(),
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all',//默认是async，改成 All 使得不止应用于按需加载的模块
+            cacheGroups: {//缓存组
+                default: {
+                    reuseExistingChunk: false
+                }
+            }
+        }
+    },
     resolve: {
         extensions: [".jsx", ".js", ".json"]//可以在引入模块的时候省略后缀 index.***
-    }
+    },
+/*     externals:{
+        jQuery: $
+        //如果直接在html 中通过 script 的方式引入，但是代码中用到了$，即注释掉了import $ from 'jQuery'，需要在这里声明。这样可以分开打包，获取也并行获取，可以优化加载速度
+    } */
 }
