@@ -14,9 +14,9 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: [
+                use: [//注意loaders 是倒着执行的
                     'style-loader',//在文档head中添加style 标签；注意不是打包的时候加上去的，而是js 运行的时候append 的
-                    'css-loader',//给css文件转化成commonjs 模块
+                    'css-loader',//把css文件转成字符串，包括在css 文件中import的其他文件
                     'sass-loader'//将scss 转成css
                 ]
             },{

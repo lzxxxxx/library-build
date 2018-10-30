@@ -4,5 +4,5 @@ import Header from './src/components/Header'
 
 ReactDOM.render(
     <Header author={'zoeliu'} />,
-    document.body
+    document.querySelector('.target')
 );
