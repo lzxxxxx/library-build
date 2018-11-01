@@ -10,7 +10,8 @@ export default class Header extends React.Component {
         return (
             <>
                 <h1>Hello World! from {this.props.author}</h1>
-                <h2>test here</h2>
+                <h2>master here</h2>
+                <h2>test here 1</h2>
                 <hr/>
             </>
         )
