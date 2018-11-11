@@ -11,7 +11,7 @@ export default class Header extends React.Component {
             <>
                 <h1>Hello World! from {this.props.author}</h1>
                 <h2>master here</h2>
-                <h2>test here 2</h2>
+                <h2>test here 3</h2>
                 <hr/>
             </>
         )
